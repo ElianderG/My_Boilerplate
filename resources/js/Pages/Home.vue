@@ -1,7 +1,7 @@
-<script setup></script>
+<script setup>
+
+</script>
 
 <template>
-    <div>
-        Hello
-    </div>
+    <p>Seja bem vindo, quer um café?</p>
 </template>
