@@ -10,6 +10,7 @@ import Main from './Layouts/Main.vue'
 import { setThemeOnLoad } from './Theme';
 
 createInertiaApp({
+  title: (title) => `My Boilerplate — ${title}`,
   resolve: (name) => {
     const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
     let page = pages[`./Pages/${name}.vue`];

@@ -15,6 +15,7 @@ import { switchTheme } from '../Theme';
             <NavLink routeName="home" componentName="Home">Home</NavLink>
           </div>
           <div class="flex items-center space-x-6">
+            <NavLink routeName="register" componentName="Auth/Register">Cadastrar</NavLink>
             <NavLink routeName="about" componentName="About">Sobre</NavLink>
             
             <button 
