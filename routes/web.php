@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::inertia('/', 'Home')->name('home');
+Route::inertia('/', 'Home')->name('home')->middleware('verified');
 
 Route::inertia('/about', 'About', ['user' => 'Eliander'])->name('about');
 
