@@ -21,12 +21,21 @@ class AuthenticateController extends Controller
         if(Auth::attempt($credentials, $request->boolean('remember'))){
             $request->session()->regenerate();
 
-            return redirect()->indended('home');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([
             'email' => 'Credenciais inválidas',
         ])->onlyInput('email');
+    }
+
+    public function destroy(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('home');
     }
 
 }
