@@ -3,6 +3,7 @@ import { Head, useForm } from '@inertiajs/vue3';
 import Container from '../../components/Container.vue';
 import Title from '../../components/Title.vue';
 import ErrorMessages from '../../components/ErrorMessages.vue';
+import SessionMessages from '../../components/SessionMessages.vue';
 import InputField from '../../components/inputField.vue';
 import Primarybtn from '../../components/Primarybtn.vue';
 import TextLink from '../../components/TextLink.vue';
@@ -13,6 +14,10 @@ const form = useForm({
     remember: null,
 })
 
+defineProps({
+    status: String,
+})
+
 const submit = () => {
     form.post(route('login'), {
         onFinish: () => form.reset('password'),
@@ -21,7 +26,7 @@ const submit = () => {
 </script>
 
 <template>
-    <Head title="Cadastro"/>
+    <Head title="Login"/>
     <Container class="w-1/2">
         <div class="mb-8 text-center">
             <Title>Faça login em sua conta</Title>
@@ -31,7 +36,8 @@ const submit = () => {
             </p>
         </div>
 
-        <ErrorMessages :errors="form.errors"/>       
+        <ErrorMessages :errors="form.errors"/>  
+        <SessionMessages :status="status"/>     
         
         <form @submit.prevent="submit" class="space-y-6">
             <InputField label="Email" name="email" type="email" icon="envelope" placeholder="Seu email" v-model="form.email"/>
@@ -39,7 +45,7 @@ const submit = () => {
             <div class="flex items-center justify-between">
                 <CheckBox name="remember" v-model="form.remember"> Lembrar de mim </CheckBox>
 
-                <TextLink routeName="home" label="Esqueceu sua senha?" />
+                <TextLink routeName="password.request" label="Esqueceu sua senha?" />
             </div>
         <Primarybtn :disabled="form.processing" class="w-full mb-4 mt-6">Login</Primarybtn>
         </form>

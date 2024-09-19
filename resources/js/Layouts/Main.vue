@@ -40,13 +40,19 @@ const show = ref(false);
               <!-- User dropdown menu -->
               <div v-show="show"
               @click="show = false"
-              class="absolute z-50 top-16 right-0 bg-slate-800
+              class="absolute z-50 top-16 right-100 bg-slate-800
               text-white rounded-lg border-slate-100 border overflow-hidden w-40"
               >
                 <Link 
+                  :href="route('dashboard')"
                   class="block w-full px-6 py-3 
                   hover:bg-slate-700 text-left"
                   >Dashboard</Link>  
+                <Link
+                  :href="route('profile.edit')"
+                  class="block w-full px-6 py-3 
+                  hover:bg-slate-700 text-left"
+                  >Perfil</Link>
                 <Link 
                   :href="route('logout')"
                   method="post"
@@ -79,8 +85,8 @@ const show = ref(false);
     </div>
 
     <main :route="$page.route" class="">
-      <body class=" p-6 bg-gradient-to-r from-indigo-500 via-blue-100 to-indigo-500 rounded-lg text-black dark:bg-indigo-900 dark:text-white dark:bg-gradient-to-r dark:from-black dark:via-indigo-800 dark:to-black">
+      <div class=" p-6 bg-gradient-to-r from-indigo-500 via-blue-100 to-indigo-500 rounded-lg text-black dark:bg-indigo-900 dark:text-white dark:bg-gradient-to-r dark:from-black dark:via-indigo-800 dark:to-black">
         <slot />
-      </body>
+      </div>
     </main>
 </template>
