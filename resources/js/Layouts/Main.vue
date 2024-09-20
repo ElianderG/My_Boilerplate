@@ -42,17 +42,17 @@ const show = ref(false);
               @click="show = false"
               class="absolute z-50 top-16 right-100 bg-slate-800
               text-white rounded-lg border-slate-100 border overflow-hidden w-40"
-              >
-                <Link 
-                  :href="route('dashboard')"
-                  class="block w-full px-6 py-3 
-                  hover:bg-slate-700 text-left"
-                  >Dashboard</Link>  
+              > 
                 <Link
                   :href="route('profile.edit')"
                   class="block w-full px-6 py-3 
                   hover:bg-slate-700 text-left"
                   >Perfil</Link>
+                <Link 
+                  :href="route('dashboard')"
+                  class="block w-full px-6 py-3 
+                  hover:bg-slate-700 text-left"
+                  >Dashboard</Link> 
                 <Link 
                   :href="route('logout')"
                   method="post"
