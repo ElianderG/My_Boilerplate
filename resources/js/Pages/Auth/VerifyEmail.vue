@@ -29,9 +29,8 @@ const submit = () => {
             </p>
         </div>
 
-        <SessionMessages :status="status"/>
-
         <form @submit.prevent="submit">
+            <SessionMessages :status="status"/>
             <Primarybtn :disabled="form.processing"
             >Reenviar link de verificação para seu e-mail</Primarybtn>
         </form>
