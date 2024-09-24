@@ -1,5 +1,5 @@
 <script setup>
-import { useForm } from '@inertiajs/inertia-vue3';
+import { useForm } from '@inertiajs/vue3';
 import Container from '../../components/Container.vue';
 import Primarybtn from '../../components/Primarybtn.vue';
 import SessionMessages from '../../components/SessionMessages.vue';
