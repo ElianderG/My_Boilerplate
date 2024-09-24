@@ -5,8 +5,7 @@ import Primarybtn from '../../../components/Primarybtn.vue';
 import ErrorMessages from '../../../components/ErrorMessages.vue';
 import SessionMessages from '../../../components/SessionMessages.vue';
 import Title from '../../../components/Title.vue';
-import { useForm } from '@inertiajs/inertia-vue3';
-import { router } from '@inertiajs/vue3';
+import { router, useForm } from '@inertiajs/vue3';
 
 const props = defineProps({
     user: Object,

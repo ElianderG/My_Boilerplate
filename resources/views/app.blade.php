@@ -17,8 +17,7 @@
     @inertiaHead
     @routes
 </head>
-<body class="font-Montserrat bg-indigo-500 text-slate-900
-dark:bg-indigo-950 dark:text-white">
+<body class="font-Montserrat bg-gradient-to-r from-indigo-500 via-blue-100 to-indigo-500 rounded-lg text-black dark:bg-indigo-900 dark:text-white dark:bg-gradient-to-r dark:from-black dark:via-indigo-800 dark:to-black">
     @inertia    
 </body>
 </html>
