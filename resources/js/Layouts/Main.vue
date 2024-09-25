@@ -32,7 +32,7 @@ const show = ref(false);
             <div v-if="user">          
               <div @click="show = !show"
               class="flex items-center gap-2 px-3 py-1
-              rounded-lg hover:bg-slate-700 cursor-pointer">
+              rounded-lg hover:bg-indigo-500 cursor-pointer">
                 <p>{{ user.name }}</p>  
                 <i class="fa-solid fa-caret-down"></i>
               </div>
@@ -40,25 +40,25 @@ const show = ref(false);
               <!-- User dropdown menu -->
               <div v-show="show"
               @click="show = false"
-              class="absolute z-50 top-16 right-100 bg-slate-800
+              class="absolute z-50 top-16 right-100 bg-indigo-800 dark:bg-indigo-950
               text-white rounded-lg border-slate-100 border overflow-hidden w-40"
               > 
                 <Link
                   :href="route('profile.edit')"
                   class="block w-full px-6 py-3 
-                  hover:bg-slate-700 text-left"
+                  hover:bg-indigo-700 text-left"
                   >Perfil</Link>
                 <Link 
                   :href="route('dashboard')"
                   class="block w-full px-6 py-3 
-                  hover:bg-slate-700 text-left"
+                  hover:bg-indigo-700 text-left"
                   >Dashboard</Link> 
                 <Link 
                   :href="route('logout')"
                   method="post"
                   as="button"
                   class="block w-full px-6 py-3 
-                  hover:bg-slate-700 text-left"
+                  hover:bg-indigo-700 text-left"
                   >Logout</Link>
               </div>
             </div>
@@ -74,7 +74,7 @@ const show = ref(false);
             
             <button 
               @click="switchTheme"
-              class="hover:bg-slate-700 w-6 h-6 grid
+              class="hover:bg-indigo-500 w-6 h-6 grid
               place-items-center rounded-full hover:outline outline-1
               outline-white right-0">
               <i class="fa-solid fa-circle-half-stroke"></i>
