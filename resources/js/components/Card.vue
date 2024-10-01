@@ -26,7 +26,7 @@ defineProps({
                 </h3>
 
                 <p>Listado em {{ new Date(listing.created_at).toLocaleDateString() }} 
-                    by <button class="text-link">{{ listing.user.name }}</button></p>
+                    por <button class="text-link">{{ listing.user.name }}</button></p>
              </div>
         </div>
         <!-- Tags -->
