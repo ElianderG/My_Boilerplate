@@ -1,9 +1,18 @@
 <script setup>
-import { Link } from '@inertiajs/vue3';
+import { router, Link } from '@inertiajs/vue3';
+
+const params = route().params;
 
 defineProps({
     listing: Object
-})
+});
+
+const selectUser = (id) => {
+    router.get(route('home'), {
+        user_id: id,
+        search: params.search,
+    });
+}
 </script>
 
 <template>
@@ -26,7 +35,7 @@ defineProps({
                 </h3>
 
                 <p>Listado em {{ new Date(listing.created_at).toLocaleDateString() }} 
-                    por <button class="text-link">{{ listing.user.name }}</button></p>
+                    por <button class="text-link" @click="selectUser(listing.user.id)">{{ listing.user.name }}</button></p>
              </div>
         </div>
         <!-- Tags -->
