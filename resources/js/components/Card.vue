@@ -11,8 +11,18 @@ const selectUser = (id) => {
     router.get(route('home'), {
         user_id: id,
         search: params.search,
+        tag: params.tag
     });
-}
+};
+
+const selectTag = (tag) => {
+    router.get(route('home'), {
+        user_id: params.user_id,
+        search: params.search,
+        tag: tag
+    });
+};
+
 </script>
 
 <template>
@@ -41,7 +51,9 @@ const selectUser = (id) => {
         <!-- Tags -->
         <div v-if="listing.tags" class="flex items-center gap-3 px-4 pb-4">
             <div v-for="tag in listing.tags.split(',')" :key="tag">
-                <button class="bg-indigo-500  text-white px-2 py-px rounded-full hover:bg-indigo-700 dark:hover:bg-indigo-900">
+                <button 
+                @click="selectTag(tag)"
+                class="bg-indigo-500  text-white px-2 py-px rounded-full hover:bg-indigo-700 dark:hover:bg-indigo-900">
                     {{ tag }}
                 </button>
             </div>
