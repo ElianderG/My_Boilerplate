@@ -43,6 +43,13 @@ const show = ref(false);
               class="absolute z-50 top-16 right-100 bg-indigo-800 dark:bg-indigo-950
               text-white rounded-lg border-slate-100 border overflow-hidden w-40"
               > 
+
+                <!-- User dropdown menu links -->
+                <Link
+                  :href="route('listing.create')"
+                  class="block w-full px-6 py-3 
+                  hover:bg-indigo-700 text-left"
+                  >Nova Listagem</Link>
                 <Link
                   :href="route('profile.edit')"
                   class="block w-full px-6 py-3 
